@@ -1,0 +1,105 @@
+---
+import { Menu, X, FileText } from 'lucide-react';
+
+const navLinks = [
+  { name: 'Sobre mí', href: '/#sobre-mi' },
+  { name: 'Stack', href: '/#stack' },
+  { name: 'Proyectos', href: '/#proyectos' },
+  { name: 'Contacto', href: '/#contacto' },
+];
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-border-muted bg-bg-primary/80 backdrop-blur-md">
+  <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+    <!-- Logo / Nombre -->
+    <a href="/" class="group flex items-center gap-1.5 font-mono text-sm font-semibold tracking-tight text-text-primary">
+      <span class="text-accent">&gt;</span>
+      <span>mateo.dev</span>
+      <span class="inline-block h-3.5 w-1.5 animate-pulse bg-accent"></span>
+    </a>
+
+    <!-- Navegación Desktop -->
+    <nav class="hidden items-center gap-8 md:flex">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="text-sm font-medium text-text-muted transition-colors hover:text-accent"
+        >
+          {link.name}
+        </a>
+      ))}
+      <a
+        href="/cv-mateo-gigy-traynor.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 rounded-lg border border-accent/40 bg-accent/10 px-3.5 py-1.5 text-sm font-medium text-accent transition hover:border-accent hover:bg-accent hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+      >
+        <FileText className="h-4 w-4" />
+        <span>CV</span>
+      </a>
+    </nav>
+
+    <!-- Botón Menú Mobile -->
+    <button
+      id="mobile-menu-btn"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Abrir menú de navegación"
+      class="rounded-lg p-1.5 text-text-muted transition hover:bg-bg-surface hover:text-text-primary md:hidden"
+    >
+      <span id="icon-open"><Menu className="h-6 w-6" /></span>
+      <span id="icon-close" class="hidden"><X className="h-6 w-6" /></span>
+    </button>
+  </div>
+
+  <!-- Menú Desplegable Mobile -->
+  <div id="mobile-menu" class="hidden border-b border-border-muted bg-bg-surface px-6 py-4 md:hidden">
+    <nav class="flex flex-col gap-4">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="mobile-link text-base font-medium text-text-muted hover:text-accent"
+        >
+          {link.name}
+        </a>
+      ))}
+      <a
+        href="/cv-mateo-gigy.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 rounded-lg border border-accent/40 bg-accent/10 px-4 py-2 text-sm font-medium text-accent hover:bg-accent hover:text-white"
+      >
+        <FileText className="h-4 w-4" />
+        <span>Ver Curriculum Vitae (PDF)</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  const toggleMenu = () => {
+    const isExpanded = btn?.getAttribute('aria-expanded') === 'true';
+    btn?.setAttribute('aria-expanded', String(!isExpanded));
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+  };
+
+  btn?.addEventListener('click', toggleMenu);
+
+  // Cerrar menú al hacer clic en cualquier enlace
+  mobileLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      if (!menu?.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+  });
+</script>

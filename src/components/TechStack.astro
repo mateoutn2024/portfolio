@@ -1,0 +1,62 @@
+---
+interface SkillCategory {
+  title: string;
+  skills: string[];
+}
+
+const skillCategories: SkillCategory[] = [
+  {
+    title: 'Frontend & Mobile',
+    skills: ['TypeScript', 'JavaScript', 'React', 'React Native', 'Angular', 'Tailwind CSS', 'HTML5 / CSS3'],
+  },
+  {
+    title: 'Backend & APIs',
+    skills: ['Node.js', 'NestJS', 'Express', 'RESTful APIs', 'JWT Auth', 'WebSockets / Realtime'],
+  },
+  {
+    title: 'Bases de Datos',
+    skills: ['PostgreSQL', 'MongoDB', 'Supabase', 'Modelado Relacional', 'SQL'],
+  },
+  {
+    title: 'Herramientas & Entorno',
+    skills: ['Git', 'GitHub', 'Expo (Básico)', 'Docker (Básico)', 'Postman', 'Bash'],
+  },
+];
+---
+
+<section id="stack" class="scroll-mt-24 border-t border-border-muted/60 py-20">
+  <div class="mx-auto max-w-5xl px-6">
+    
+    <!-- Encabezado -->
+    <div class="space-y-2">
+      <span class="font-mono text-xs font-semibold tracking-wider text-accent uppercase">
+        Criterio & Ecosistema
+      </span>
+      <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+        Stack Tecnológico
+      </h2>
+      <p class="max-w-2xl text-base text-text-muted">
+        Tecnologías y herramientas que utilizo para diseñar, construir y desplegar aplicaciones de punta a punta.
+      </p>
+    </div>
+
+    <!-- Grilla de Categorías -->
+    <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      {skillCategories.map((category) => (
+        <div class="rounded-xl border border-border-muted bg-bg-surface p-6 transition hover:border-accent/40">
+          <h3 class="font-mono text-sm font-semibold tracking-wide text-accent">
+            // {category.title}
+          </h3>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {category.skills.map((skill) => (
+              <span class="inline-flex items-center rounded-md border border-border-muted bg-bg-primary/50 px-2.5 py-1 text-xs font-medium text-text-primary transition hover:border-accent/60">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

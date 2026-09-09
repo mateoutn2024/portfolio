@@ -1,0 +1,79 @@
+---
+import { GraduationCap, Code2, Users2 } from 'lucide-react';
+---
+
+<section id="sobre-mi" class="scroll-mt-24 border-t border-border-muted/60 py-20">
+  <div class="mx-auto max-w-5xl px-6">
+    
+    <!-- Encabezado de sección -->
+    <div class="space-y-2">
+      <span class="font-mono text-xs font-semibold tracking-wider text-accent uppercase">
+        Trayectoria & Enfoque
+      </span>
+      <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+        Sobre mí
+      </h2>
+    </div>
+
+    <!-- Contenido en Grid -->
+    <div class="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-3">
+      
+      <div class="space-y-6 text-base leading-relaxed text-text-muted lg:col-span-2">
+        <p>
+          Me formo como desarrollador cursando la <strong class="font-semibold text-text-primary">Tecnicatura Universitaria en Programación en la UTN</strong>, donde adquirí bases sólidas en algoritmia, estructuras de datos, patrones de software y modelado relacional.
+        </p>
+        
+        <p>
+          Mi foco técnico está en el ecosistema <strong class="font-semibold text-text-primary">TypeScript</strong>. En frontend disfruto diseñar interfaces intuitivas y mantenibles con <strong class="font-semibold text-text-primary">React</strong> y <strong class="font-semibold text-text-primary">Angular</strong>, mientras que en backend construyo arquitecturas modulares y seguras con <strong class="font-semibold text-text-primary">NestJS</strong>, <strong class="font-semibold text-text-primary">Node.js</strong> y bases de datos relacionales y NoSQL.
+        </p>
+
+        <p>
+          Cuento con experiencia laboral previa en <strong class="font-semibold text-text-primary">atención al cliente</strong>, una faceta que potenció mis habilidades de comunicación, gestión de expectativas y empatía con las necesidades reales de los usuarios finales al momento de diseñar soluciones de software.
+        </p>
+      </div>
+
+      <!-- Columna 3: Cards de valor diferencial -->
+      <div class="flex flex-col gap-4">
+        
+        <div class="rounded-xl border border-border-muted bg-bg-surface p-5">
+          <div class="flex items-center gap-3">
+            <div class="rounded-lg bg-accent/10 p-2.5 text-accent">
+              <GraduationCap className="h-5 w-5" />
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-text-primary">Formación Académica</h3>
+              <p class="text-xs text-text-muted">TUP — UTN FRA</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-border-muted bg-bg-surface p-5">
+          <div class="flex items-center gap-3">
+            <div class="rounded-lg bg-accent/10 p-2.5 text-accent">
+              <Code2 className="h-5 w-5" />
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-text-primary">Enfoque de Ingeniería</h3>
+              <p class="text-xs text-text-muted">Clean Code & Tipado Estricto</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-border-muted bg-bg-surface p-5">
+          <div class="flex items-center gap-3">
+            <div class="rounded-lg bg-accent/10 p-2.5 text-accent">
+              <Users2 className="h-5 w-5" />
+            </div>
+            <div>
+              <h3 class="text-sm font-semibold text-text-primary">Habilidades Blandas</h3>
+              <p class="text-xs text-text-muted">Comunicación & Resolución</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

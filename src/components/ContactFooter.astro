@@ -1,0 +1,113 @@
+---
+import { Mail, Copy, Check } from 'lucide-react';
+
+const currentYear = new Date().getFullYear();
+const email = "mgigytraynor@gmail.com"; 
+---
+
+<footer id="contacto" class="scroll-mt-24 border-t border-border-muted bg-bg-surface/50 pt-20 pb-12">
+  <div class="mx-auto max-w-5xl px-6">
+    
+    <!-- Bloque de Contacto -->
+    <div class="max-w-2xl space-y-4">
+      <span class="font-mono text-xs font-semibold tracking-wider text-accent uppercase">
+        Conectemos
+      </span>
+      <h2 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+        ¿Tenés una oportunidad o proyecto en mente?
+      </h2>
+      <p class="text-base leading-relaxed text-text-muted">
+        Actualmente busco incorporarme a un equipo donde pueda aportar con TypeScript, React y Node.js, y seguir aprendiendo prácticas de ingeniería sólidas. Mi bandeja de entrada está siempre abierta.
+      </p>
+
+      <!-- Acciones de Email -->
+      <div class="flex flex-wrap items-center gap-3 pt-4">
+        <!-- Botón mailto nativo -->
+        <a
+          href={`mailto:${email}?subject=Contacto%20desde%20tu%20portfolio`}
+          class="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        >
+          <Mail className="h-4 w-4" />
+          <span>Enviar mensaje</span>
+        </a>
+
+        <!-- Botón para copiar email al portapapeles -->
+        <button
+          id="copy-email-btn"
+          data-email={email}
+          type="button"
+          aria-label="Copiar correo al portapapeles"
+          class="inline-flex items-center gap-2 rounded-lg border border-border-muted bg-bg-primary px-4 py-2.5 text-sm font-medium text-text-muted transition hover:border-accent hover:text-text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+        >
+          <span id="copy-icon"><Copy className="h-4 w-4" /></span>
+          <span id="check-icon" class="hidden text-emerald-400"><Check className="h-4 w-4" /></span>
+          <span id="copy-text">Copiar email</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Línea divisoria y pie legal -->
+    <div class="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border-muted/60 pt-8 sm:flex-row">
+      <p class="font-mono text-xs text-text-muted">
+        © {currentYear} Mateo Gigy Traynor. Construido con Astro & Tailwind CSS.
+      </p>
+
+      <!-- Redes sociales en SVG puro (Cero dependencias) -->
+      <div class="flex items-center gap-4 text-text-muted">
+        <a
+          href="https://github.com/mateoutn2024"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub de Mateo"
+          class="transition hover:text-text-primary"
+        >
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path>
+          </svg>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/mateotraynor/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn de Mateo"
+          class="transition hover:text-text-primary"
+        >
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  const copyBtn = document.getElementById('copy-email-btn');
+  const copyText = document.getElementById('copy-text');
+  const copyIcon = document.getElementById('copy-icon');
+  const checkIcon = document.getElementById('check-icon');
+
+  copyBtn?.addEventListener('click', async () => {
+    const emailToCopy = copyBtn.getAttribute('data-email');
+    if (!emailToCopy) return;
+
+    try {
+      await navigator.clipboard.writeText(emailToCopy);
+      
+      // Feedback visual
+      if (copyText) copyText.textContent = '¡Copiado!';
+      copyIcon?.classList.add('hidden');
+      checkIcon?.classList.remove('hidden');
+
+      setTimeout(() => {
+        if (copyText) copyText.textContent = 'Copiar email';
+        copyIcon?.classList.remove('hidden');
+        checkIcon?.classList.add('hidden');
+      }, 2000);
+    } catch (err) {
+      console.error('Error al copiar al portapapeles:', err);
+    }
+  });
+</script>
