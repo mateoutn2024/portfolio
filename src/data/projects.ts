@@ -34,7 +34,7 @@ export const projectsData: ProjectDetail[] = [
       'Separación de comandas: lógica para dividir automáticamente un mismo pedido en subórdenes independientes para cocina y coctelería según la categoría de producto.',
     ],
     tags: ['React Native', 'Expo', 'Supabase', 'PostgreSQL', 'Realtime', 'TypeScript'],
-    githubUrl: 'https://github.com/mgigytraynor',
+    githubUrl: 'https://github.com/mateoutn2024',
   },
   {
     slug: 'social-hub',
@@ -57,6 +57,6 @@ export const projectsData: ProjectDetail[] = [
       'Monitoreo y agregaciones analíticas en MongoDB para alimentar gráficos de actividad y visitas sin degradar el tiempo de respuesta de la API.',
     ],
     tags: ['NestJS', 'Angular', 'MongoDB', 'TypeScript', 'JWT Auth', 'REST API'],
-    githubUrl: 'https://github.com/mgigytraynor',
+    githubUrl: 'https://github.com/mateoutn2024',
   },
 ];
